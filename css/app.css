@@ -1,0 +1,258 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  
+}
+body {
+  min-height: 100vh;
+  /* font-size: 30px; */
+}
+/* html {
+  font-size: 20px;
+} */
+/* card */
+.card-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card-item {
+  /* giãn ra khi container đủ lớn */
+  flex-grow: 1;
+  /* cho phép co lại khi container nhỏ lại */
+  flex-shrink: 1;
+  /* độ rộng là 300px, nhưng nó có thể lớn hơn thêm vì grow đang là 1, hoặc nhỏ hơn 300px vì shrink đang là 1 */
+  flex-basis: 300px;
+
+  /* flex: 1; grow 1 shrink 1 basis 0 */
+
+  aspect-ratio: 1;
+}
+.card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.logo-image {
+  width: 20px;
+}
+.right {
+  background-color: red;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.auths {
+  flex-shrink: 0;
+}
+.search {
+  flex: 1;
+}
+.search input {
+  width: 100%;
+}
+/* em vs rem */
+.em-unit,
+.rem-unit {
+  width: 200px;
+  aspect-ratio: 1;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.em-unit {
+  background-color: #6a5af9;
+  font-size: 1em;
+}
+.rem-unit {
+  background-color: #f62682;
+  font-size: 1rem;
+}
+.something {
+  font-size: 40px;
+}
+.long-text {
+  font-family: "DM sans";
+  /* 1em = 18px */
+  font-size: 18px;
+  line-height: 1.75;
+  max-width: 44.44em;
+  margin: 50px auto;
+}
+/*
+1. 1em = 1rem = 16px
+2. html: 20px, body: 30px -> 1rem = 20px, 1em = 30px
+*/
+.boxed-image {
+  width: 20rem;
+  aspect-ratio: 1;
+}
+.boxed-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* @media screen and (max-width: 1023.98px) {
+  html {
+    font-size: 16px;
+  }
+} */
+/* post */
+.post {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  font-family: "DM sans", sans-serif;
+  padding: 15px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 8px;
+  margin: 20px auto;
+  gap: 20px;
+}
+.post-image {
+  width: 200px;
+  flex-shrink: 0;
+}
+.post-content {
+  flex: 1;
+}
+@media screen and (max-width: 63em) {
+  .post-wrapper {
+    font-size: 16px;
+  }
+  .post {
+    flex-direction: column;
+    font-size: 16px;
+  }
+}
+/* units */
+html {
+  font-size: 200%;
+}
+.units > div {
+  height: 150px;
+  width: 100%;
+}
+.unit-em {
+  background-color: #20e3b2;
+}
+.unit-rem {
+  background-color: #2cccff;
+}
+.unit-px {
+  background-color: #ff6651;
+}
+@media screen and (min-width: 400px) {
+  .unit-px {
+    opacity: 0.5;
+  }
+}
+@media screen and (min-width: 25em) {
+  .unit-em {
+    opacity: 0.5;
+  }
+}
+@media screen and (min-width: 25rem) {
+  .unit-rem {
+    opacity: 0.5;
+  }
+}
+/* custom checkbox */
+body {
+  padding: 20px;
+}
+.forms {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.radio,
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e6e8ec;
+  border-radius: 8px;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio {
+  border-radius: 100rem;
+}
+.radio-label,
+.checkbox-label {
+  cursor: pointer;
+  display: inline-block;
+}
+.radio-input,
+.checkbox-input {
+  display: none;
+}
+.radio-input:checked ~ .radio,
+.checkbox-input:checked ~ .checkbox {
+  /* active*/
+  background-color: #2cccff;
+  border-color: #2cccff;
+  color: white;
+}
+/* toggle */
+.toggle-label {
+  display: inline-block;
+  cursor: pointer;
+}
+.toggle {
+  width: 48px;
+  height: 24px;
+  border-radius: 100rem;
+  background-color: #e7ecf3;
+  padding: 4px 5px;
+  transition: all 0.25s linear;
+}
+.toggle-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 100rem;
+  background-color: #fff;
+  transition: all 0.25s linear;
+}
+.toggle-input {
+  display: none;
+}
+.toggle-input:checked + .toggle {
+  /* active */
+  background-color: #6a5af9;
+}
+.toggle-input:checked + .toggle .toggle-spinner {
+  /* active */
+  transform: translateX(22px);
+}
